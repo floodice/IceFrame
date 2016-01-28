@@ -1,29 +1,29 @@
-package com.flood.iceframe;
+package com.flood.iceframe.app;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.flood.iceframe.R;
 import com.flood.iceframe.app.BaseActivity;
 import com.flood.iceframe.app.IceApplication;
-import com.flood.iceframe.module.ActivityComponent;
+import com.flood.iceframe.config.Constants;
+import com.flood.iceframe.component.ActivityComponent;
 import com.flood.iceframe.module.ActivityModule;
-import com.flood.iceframe.module.ApplicationComponent;
+import com.flood.iceframe.component.ApplicationComponent;
 import com.flood.iceframe.module.DaggerActivityComponent;
 import com.flood.iceframe.module.api.ApiManager;
 import com.jakewharton.rxbinding.view.RxView;
-import com.jakewharton.rxbinding.widget.RxCompoundButton;
 import com.jakewharton.rxbinding.widget.RxTextView;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 import rx.Observable;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func0;
-import rx.schedulers.Schedulers;
+import rx.functions.Func2;
 
 public class MainActivity extends BaseActivity {
 
@@ -41,6 +41,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Constants.STRICT_MODE){
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+        }
         component = DaggerActivityComponent.builder()
                 .applicationComponent(((IceApplication) getApplication()).getComponent())
                 .activityModule(new ActivityModule(this)).apiManager(new ApiManager()).build();
@@ -93,25 +97,33 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onNext(Void aVoid) {
                 Log.d("Subscriber", "onNext:");
-                defer.subscribe(new Subscriber<String>() {
-                    @Override
-                    public void onCompleted() {
+                Observable.just(1, 2, 3, 4, 5)
+                        .scan(new Func2<Integer, Integer, Integer>() {
+                            @Override
+                            public Integer call(Integer integer, Integer integer2) {
+                                Log.d("Subscriber", "integer:" + integer);
+                                Log.d("Subscriber", "integer2:" + integer2);
+                                return integer2;
+                            }
+                        })
+                        .subscribe(new Subscriber<Integer>() {
+                            @Override
+                            public void onCompleted() {
 
-                    }
+                            }
 
-                    @Override
-                    public void onError(Throwable e) {
+                            @Override
+                            public void onError(Throwable e) {
 
-                    }
+                            }
 
-                    @Override
-                    public void onNext(String s) {
-                        Log.d("Subscriber", "onNext:" + s);
-                    }
-                });
+                            @Override
+                            public void onNext(Integer integer) {
+                                Log.d("Subscriber", "onNext:" + integer);
+                            }
+                        });
             }
         });
-
 
 
     }

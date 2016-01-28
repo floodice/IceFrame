@@ -3,7 +3,7 @@ package com.flood.iceframe.app;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.flood.iceframe.module.ApplicationComponent;
+import com.flood.iceframe.component.ApplicationComponent;
 
 import butterknife.ButterKnife;
 

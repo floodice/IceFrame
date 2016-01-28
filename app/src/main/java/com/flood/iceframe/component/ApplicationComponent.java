@@ -1,6 +1,7 @@
-package com.flood.iceframe.module;
+package com.flood.iceframe.component;
 
 import com.flood.iceframe.app.IceApplication;
+import com.flood.iceframe.module.ApplicationModule;
 
 import dagger.Component;
 

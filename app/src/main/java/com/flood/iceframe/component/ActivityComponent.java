@@ -1,8 +1,7 @@
-package com.flood.iceframe.module;
+package com.flood.iceframe.component;
 
-import android.view.View;
-
-import com.flood.iceframe.MainActivity;
+import com.flood.iceframe.app.MainActivity;
+import com.flood.iceframe.module.ActivityModule;
 import com.flood.iceframe.module.api.ApiManager;
 import com.flood.iceframe.widget.ToastHelper;
 

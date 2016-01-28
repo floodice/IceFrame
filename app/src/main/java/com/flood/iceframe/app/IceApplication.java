@@ -2,7 +2,7 @@ package com.flood.iceframe.app;
 
 import android.app.Application;
 
-import com.flood.iceframe.module.ApplicationComponent;
+import com.flood.iceframe.component.ApplicationComponent;
 import com.flood.iceframe.module.ApplicationModule;
 import com.flood.iceframe.module.DaggerApplicationComponent;
 
