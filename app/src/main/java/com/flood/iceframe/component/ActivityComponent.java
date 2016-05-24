@@ -2,6 +2,7 @@ package com.flood.iceframe.component;
 
 import com.flood.iceframe.app.MainActivity;
 import com.flood.iceframe.module.ActivityModule;
+import com.flood.iceframe.module.ActivityScope;
 import com.flood.iceframe.module.api.ApiManager;
 import com.flood.iceframe.widget.ToastHelper;
 
@@ -14,6 +15,7 @@ import dagger.Component;
  * @author: flood
  * @date: 2016-01-14 15:35
  */
+@ActivityScope
 @Component(dependencies = ApplicationComponent.class, modules = {ActivityModule.class, ApiManager.class})
 public interface ActivityComponent {
 

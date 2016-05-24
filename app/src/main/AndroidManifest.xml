@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flood.iceframe">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".app.IceApplication"
         android:allowBackup="true"
@@ -10,7 +15,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:value="56c571c1e0f55a6edd002326" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="nice" android:name="UMENG_CHANNEL"/>
+
         <activity android:name=".app.MainActivity">
+
+        </activity>
+        <activity android:name=".app.Main2Activity" />
+        <activity android:name=".app.SlidingActivity">
+        </activity>
+        <activity android:name=".app.StartActivity"
+            android:theme="@style/StartTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

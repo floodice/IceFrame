@@ -1,11 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/crimson</item>
-        <item name="colorPrimaryDark">@color/deeppink</item>
-        <item name="colorAccent">@color/crimson</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="colorPrimary">@color/dodgerblue</item>
+        <item name="colorPrimaryDark">@color/dodgerblue</item>
+        <item name="colorAccent">@color/deepskyblue</item>
+        <item name="android:colorForeground">@color/deepskyblue</item>
     </style>
     <style name="AppTheme" parent="AppTheme.Base"></style>
+    <style name="StartTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="SlidingTextViewStyle" parent="@android:style/Widget.TextView">
+        <!--<item name="android:fontFamily">sans-serif-medium</item>-->
+        <item name="android:textColor">#FFF</item>
+    </style>
+
 </resources>

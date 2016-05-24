@@ -3,6 +3,9 @@ package com.flood.iceframe.module;
 import android.app.Activity;
 
 import com.flood.iceframe.module.api.ApiManager;
+import com.flood.iceframe.widget.ToastHelper;
+
+import javax.inject.Inject;
 
 import dagger.Module;
 import dagger.Provides;
@@ -16,14 +19,19 @@ import dagger.Provides;
  */
 @Module
 public class ActivityModule {
-     private Activity mActivity;
+    private Activity mActivity;
 
     public ActivityModule(Activity activity){
         this.mActivity = activity;
     }
 
     @Provides
-    Activity providersActivity(){
+    public Activity providersActivity(){
         return mActivity;
+    }
+
+    @Provides
+    public ToastHelper providersToastHelper(){
+        return new ToastHelper();
     }
 }

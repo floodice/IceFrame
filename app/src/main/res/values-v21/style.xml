@@ -2,6 +2,8 @@
 <resources>
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/deeppink</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:navigationBarColor">@color/dodgerblue</item>
+        <item name="android:statusBarColor">@color/dodgerblue</item>
     </style>
 </resources>
