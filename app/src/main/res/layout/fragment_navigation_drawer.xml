@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0dp"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context="com.flood.iceframe.fragment.NavigationFragment">
+    <include
+        layout="@layout/navigation_item"></include>
+    <include layout="@layout/line_h"></include>
+    <include
+        layout="@layout/navigation_item"></include>
+    <include layout="@layout/line_h"></include>
+    <include
+        layout="@layout/navigation_item"></include>
+    <include layout="@layout/line_h"></include>
+    <include
+        layout="@layout/navigation_item"></include>
+    <include layout="@layout/line_h"></include>
+    <include
+        layout="@layout/navigation_item"></include>
+
+</LinearLayout>

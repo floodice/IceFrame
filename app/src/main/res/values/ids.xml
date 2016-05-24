@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="md__drawer"/>
+    <item type="id" name="md__content"/>
+
+    <item name="latest_item_id" type="id"></item>
+</resources>
